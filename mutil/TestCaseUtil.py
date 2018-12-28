@@ -21,7 +21,9 @@ class TestCaseUtil(unittest.TestCase):
             os.popen(
                 'adb -s %s shell getprop ro.build.version.release' %
                 deviceId).readlines())
+        print(deviceAndroidVersion)
         deviceVersion = re.findall(r'^\w*\b', deviceAndroidVersion[0])[0]
+        #deviceVersion=7.1
         print(deviceId, deviceVersion)
         desired_caps = {}
         desired_caps['platformName'] = 'Android'
@@ -30,6 +32,7 @@ class TestCaseUtil(unittest.TestCase):
         desired_caps['appPackage'] ='com.tencent.mm' #'com.smartisanos.notes'
         desired_caps['noReset'] = True
         desired_caps['appActivity'] ='com.tencent.mm.ui.LauncherUI' #'com.smartisanos.notes.NotesActivity'
+        desired_caps['automationName']='uiautomator2'
         #desired_caps['resetKeyboard']=True
         #desired_caps['unicodeKeyboard']=True
         #self.driver=webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
@@ -38,6 +41,7 @@ class TestCaseUtil(unittest.TestCase):
         #     'http://localhost', port=4723,desired_capabilities=desired_caps)
         #self.driver.launch_app()
         #sleep(3)
+        self.driver.implicitly_wait(10)
 
     def tearDown(self):
         self.driver.close_app()
