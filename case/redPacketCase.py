@@ -42,7 +42,7 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
         sleep(2)
         #rednum=self.driver.find_element_by_android_uiautomator('new UiSelector().text("0.00")')
         #rednum=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/csk")')
-        rednum=self.driver.find_element_by_xpath('android.widget.EditText')
+        rednum=self.driver.find_element_by_xpath('//android.widget.EditText[@resource-id="com.tencent.mm:id/csk"]')
         rednum.click()
         rednum.clear()
         self.driver.set_value(rednum,'0.1')
