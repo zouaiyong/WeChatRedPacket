@@ -7,9 +7,10 @@
 import re
 import unittest
 import os
-import sys
-from time import sleep
 from appium import webdriver
+
+from mutil.helpers import EXECUTOR
+
 
 class TestCaseUtil(unittest.TestCase):
 
@@ -26,16 +27,17 @@ class TestCaseUtil(unittest.TestCase):
         desired_caps['platformName'] = 'Android'
         desired_caps['platformVersion'] = deviceVersion
         desired_caps['deviceName'] = deviceId
-        desired_caps['appPackage'] = 'com.tencent.mm'
+        desired_caps['appPackage'] ='com.tencent.mm' #'com.smartisanos.notes'
         desired_caps['noReset'] = True
-        desired_caps['appActivity'] = 'com.tencent.mm.ui.LauncherUI'
-        desired_caps['resetKeyboard']=True
-        desired_caps['unicodeKeyboard']=True
-        # self.driver=webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
-        self.driver = webdriver.Remote(
-            'http://localhost:4723/wd/hub', desired_caps)
-        self.driver.launch_app()
-        sleep(3)
+        desired_caps['appActivity'] ='com.tencent.mm.ui.LauncherUI' #'com.smartisanos.notes.NotesActivity'
+        #desired_caps['resetKeyboard']=True
+        #desired_caps['unicodeKeyboard']=True
+        #self.driver=webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
+        self.driver = webdriver.Remote(command_executor=EXECUTOR, desired_capabilities=desired_caps)
+        # self.driver = WebDriver(
+        #     'http://localhost', port=4723,desired_capabilities=desired_caps)
+        #self.driver.launch_app()
+        #sleep(3)
 
     def tearDown(self):
         self.driver.close_app()
@@ -48,11 +50,12 @@ class TestCaseUtil(unittest.TestCase):
             self.caseExecute()
 
         except Exception as e:
-            raise Exception("error throw", 1)
+            raise Exception("error throw", str(e))
 
     def caseExecute(self):
         print('parent case execute')
         pass
 if __name__ == '__main__':
-    suite = unittest.TestLoader().loadTestsFromTestCase(TestCaseUtil)
-    unittest.TextTestRunner(verbosity=1).run(suite)
+    #suite = unittest.TestLoader().loadTestsFromTestCase(TestCaseUtil)
+    #unittest.TextTestRunner(verbosity=1).run(suite)
+    pass
