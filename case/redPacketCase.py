@@ -32,6 +32,7 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
         textid.click()
         textid.clear()
         inputtext=userdic.get('phonenume')
+        print(inputtext)
         adbcommond='adb shell am broadcast -a ADB_INPUT_TEXT --es msg {inputtext}'.format(inputtext=inputtext)
         os.system(adbcommond)
         alias=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/pp")')
