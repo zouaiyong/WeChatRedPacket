@@ -11,7 +11,9 @@ from appium import webdriver
 
 from mutil.helpers import EXECUTOR
 
-
+PATH = lambda p: os.path.abspath(
+        os.path.join(os.path.dirname(__file__), p)
+    )
 class TestCaseUtil(unittest.TestCase):
 
     def setUp(self):
@@ -21,7 +23,6 @@ class TestCaseUtil(unittest.TestCase):
             os.popen(
                 'adb -s %s shell getprop ro.build.version.release' %
                 deviceId).readlines())
-        print(deviceAndroidVersion)
         deviceVersion = re.findall(r'^\w*\b', deviceAndroidVersion[0])[0]
         #deviceVersion=7.1
         print(deviceId, deviceVersion)
@@ -33,18 +34,24 @@ class TestCaseUtil(unittest.TestCase):
         desired_caps['noReset'] = True
         desired_caps['appActivity'] ='com.tencent.mm.ui.LauncherUI' #'com.smartisanos.notes.NotesActivity'
         desired_caps['automationName']='uiautomator2'
+        desired_caps['app'] = PATH(
+            '../apkfile/ADBKeyBoard.apk'
+        )
         #desired_caps['resetKeyboard']=True
         #desired_caps['unicodeKeyboard']=True
         #self.driver=webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
         self.driver = webdriver.Remote(command_executor=EXECUTOR, desired_capabilities=desired_caps)
+        self.driver.install_app(desired_caps['app'])
+        os.system('adb shell ime set com.android.adbkeyboard/.AdbIME')
         # self.driver = WebDriver(
         #     'http://localhost', port=4723,desired_capabilities=desired_caps)
         #self.driver.launch_app()
         #sleep(3)
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(5)
+
 
     def tearDown(self):
-        self.driver.close_app()
+        #self.driver.close_app()
         self.driver.quit()
         print("tear down is run")
 
