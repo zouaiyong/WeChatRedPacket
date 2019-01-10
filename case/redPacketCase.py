@@ -27,7 +27,7 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
         print(passlist)
         keycodvalue={'0':7,'1':8,'2':9,'3':10,'4':11,'5':12,'6':13,'7':14,'8':15,'9':16}
         if "申请提现" in userdic.get('状态'):
-            sleep(3)
+            #sleep(3)
             id=self.driver.find_element_by_android_uiautomator('new UiSelector().description("Search")')
             #id=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/ij")')
             id.click()
@@ -51,7 +51,7 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
                 chat.click()
                 sleep(1)
                 self.driver.find_element_by_android_uiautomator('new UiSelector().text("Red Packet")').click()
-                sleep(2)
+                #sleep(2)
                 #rednum=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/csk")')
                 rednum=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/clu")')
 
@@ -59,9 +59,10 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
                 money=userdic.get('金额')
                 self.driver.set_value(rednum,money)
                 self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/cnh")').click()
+                #self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/cuj")').click()
 
                #self.driver.find_element_by_android_uiautomator('new UiSelector().text("Password")').click()
-                sleep(3)
+                #sleep(3)
                 self.driver.find_element_by_android_uiautomator(
                     'new UiSelector().resourceId("com.tencent.mm:id/c7u")').click()
                 print(keycodvalue.get(passlist[0]))
@@ -71,7 +72,7 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
                 self.driver.press_keycode(keycodvalue.get(passlist[3]))
                 self.driver.press_keycode(keycodvalue.get(passlist[4]))
                 self.driver.press_keycode(keycodvalue.get(passlist[5]))
-                sleep(2)
+                sleep(1)
                 self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/alw")')
                 self.driver.back()
 

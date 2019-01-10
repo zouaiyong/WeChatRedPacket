@@ -81,10 +81,10 @@ def writeCsvfile(filepath, rows):
         f_csv = csv.DictReader(file)
         header=f_csv.fieldnames
         print(header)
-    #with open(filepath,'w', encoding='utf-8') as file:
-     #    f_csv = csv.DictWriter(file,header)
-     #    f_csv.writeheader()
-    #     f_csv.writerows(rows)
+    with open(filepath,'w', encoding='utf-8') as file:
+        f_csv = csv.DictWriter(file,header)
+        f_csv.writeheader()
+        f_csv.writerows(rows)
 
 
 if __name__ == '__main__':
@@ -97,13 +97,20 @@ if __name__ == '__main__':
     alluser = readCsvfile(filepath)
     conf = configpy()
     conf.setConfig('user', 'password', str(password))
+    afterrows=[]
     if args.filepath and args.password:
         if alluser:
             for user in alluser:
                 conf.setConfig(
                     'user', 'user', json.dumps(
                         user, ensure_ascii=False))
-                print('=======',execute())
+                result=execute()
+                if len(result.errors)==0 and len(result.failures)==0:
+                    user['状态']='已结算'
+                    afterrows.append(user)
+            writeCsvfile(filepath,afterrows)
+
+
     else:
         print('''请输入正确的参数
         --filepath： type string  excel路径
