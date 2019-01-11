@@ -17,8 +17,14 @@ PATH = lambda p: os.path.abspath(
 class TestCaseUtil(unittest.TestCase):
 
     def setUp(self):
-        print("set up  is run")
-        deviceId ='bf5fb4a2' #sys.argv[1]
+        #print("set up  is run")
+        os.system('adb wait-for-device')
+        devicelist=list(
+            os.popen('adb devices').readlines())
+        #print(devicelist)
+        deviceId=re.findall(r'^\w*\b', devicelist[1])[0]
+        #print(deviceId)
+        #deviceId ='bf5fb4a2' #sys.argv[1]
         deviceAndroidVersion = list(
             os.popen(
                 'adb -s %s shell getprop ro.build.version.release' %
@@ -40,6 +46,7 @@ class TestCaseUtil(unittest.TestCase):
         #desired_caps['resetKeyboard']=True
         #desired_caps['unicodeKeyboard']=True
         #self.driver=webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
+        #os.popen('adb wait-for-device ')
         self.driver = webdriver.Remote(command_executor=EXECUTOR, desired_capabilities=desired_caps)
         self.driver.install_app(desired_caps['app'])
         os.system('adb shell ime set com.android.adbkeyboard/.AdbIME')
@@ -47,12 +54,13 @@ class TestCaseUtil(unittest.TestCase):
         #     'http://localhost', port=4723,desired_capabilities=desired_caps)
         #self.driver.launch_app()
         #sleep(3)
-        self.driver.implicitly_wait(5)
+        #self.driver.implicitly_wait(5)
 
 
     def tearDown(self):
         #self.driver.close_app()
-        self.driver.quit()
+        #self.driver.quit()
+        self.driver.back()
         print("tear down is run")
 
     def test_case(self):
