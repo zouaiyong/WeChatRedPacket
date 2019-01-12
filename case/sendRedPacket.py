@@ -26,6 +26,7 @@ class sendRedPacket(mutil.TestCaseUtil.TestCaseUtil):
 
 
     def caseExecute(self):
+
         apiurl = 'http://nodejs999.com/api/video/v1/sendmoney2'
         params = {'id': '123', 'type': 2, 'xtype': 4}
         #password = conf.getConfig('user', 'password')
@@ -38,7 +39,7 @@ class sendRedPacket(mutil.TestCaseUtil.TestCaseUtil):
             for user in alluser:
                 if  user.get('type')==1:
                     self.driver.launch_app()
-                    #sleep(3)
+                    sleep(2)
                     id=self.driver.find_element_by_android_uiautomator('new UiSelector().description("Search")')
                     #id=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/ij")')
                     id.click()
