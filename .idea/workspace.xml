@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2ec5ca5-22c2-4ea3-905f-cb927b2ffd03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/redPacketCase.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/redPacketCase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mutil/TestCaseUtil.py" beforeDir="false" afterPath="$PROJECT_DIR$/mutil/TestCaseUtil.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mutil/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/mutil/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runcase.py" beforeDir="false" afterPath="$PROJECT_DIR$/runcase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/sendRedPacket.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/sendRedPacket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/提现.csv" beforeDir="false" afterPath="$PROJECT_DIR$/提现.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,6 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/WeChatRedPacket$pytest_in_sendRedPacket_py.coverage" NAME="pytest in sendRedPacket.py Coverage Results" MODIFIED="1547302610067" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/WeChatRedPacket$pytest_for_TestCaseUtil_TestCaseUtil.coverage" NAME="pytest for TestCaseUtil.TestCaseUtil Coverage Results" MODIFIED="1547126937812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mutil" />
     <SUITE FILE_PATH="coverage/WeChatRedPacket$pytest_in_TestCaseUtil_py.coverage" NAME="pytest in TestCaseUtil.py Coverage Results" MODIFIED="1546144535566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mutil" />
     <SUITE FILE_PATH="coverage/WeChatRedPacket$configure.coverage" NAME="configure Coverage Results" MODIFIED="1546080253767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mutil" />
@@ -66,57 +64,63 @@
     <session id="627637865">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="csv" value="4" />
-          <entry key="py" value="7" />
+          <entry key="ini" value="1" />
+          <entry key="py" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Ini" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="7" />
+          <entry key="Python" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="ini" value="25" />
-          <entry key="py" value="736" />
-          <entry key="txt" value="8" />
+          <entry key="ini" value="46" />
+          <entry key="py" value="1802" />
+          <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Ini" value="25" />
-          <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="736" />
+          <entry key="Ini" value="46" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="Python" value="1802" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/redPacketCase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="760">
-              <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
-              <folding>
-                <element signature="e#159#174#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-977">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/runcase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1061">
-              <caret line="110" column="43" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
+            <state relative-caret-position="1882">
+              <caret line="128" column="55" selection-start-line="127" selection-start-column="20" selection-end-line="128" selection-end-column="55" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -124,29 +128,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/lib/python3.6/unittest/runner.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/case/sendRedPacket.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="295">
+              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+              <folding>
+                <element signature="e#160#175#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.ini">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file:///anaconda3/lib/python3.6/unittest/result.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="39" column="21" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/lib/python3.6/unittest/loader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-509">
-              <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
+            <state relative-caret-position="132">
+              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -154,17 +157,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/提现.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mutil/configure.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="19" />
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -172,8 +166,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mutil/config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="15">
+              <caret line="1" column="4" selection-start-line="1" selection-end-line="1" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -181,8 +175,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mutil/TestCaseUtil.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="51" column="58" lean-forward="true" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+            <state relative-caret-position="132">
+              <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
               <folding>
                 <element signature="e#160#169#0" expanded="true" />
               </folding>
@@ -191,10 +185,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file:///anaconda3/lib/python3.6/unittest/case.py">
+        <entry file="file:///anaconda3/lib/python3.6/site-packages/appium/webdriver/webdriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4905">
-              <caret line="340" column="6" selection-start-line="340" selection-start-column="6" selection-end-line="340" selection-end-column="6" />
+            <state relative-caret-position="132">
+              <caret line="868" column="8" selection-start-line="868" selection-start-column="8" selection-end-line="868" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -227,8 +221,9 @@
         <option value="$PROJECT_DIR$/提现.csv" />
         <option value="$PROJECT_DIR$/mutil/config.ini" />
         <option value="$PROJECT_DIR$/runcase.py" />
-        <option value="$PROJECT_DIR$/case/redPacketCase.py" />
         <option value="$PROJECT_DIR$/mutil/TestCaseUtil.py" />
+        <option value="$PROJECT_DIR$/case/redPacketCase.py" />
+        <option value="$PROJECT_DIR$/case/sendRedPacket.py" />
       </list>
     </option>
   </component>
@@ -300,7 +295,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for TestCaseUtil.TestCaseUtil.test_case">
+  <component name="RunManager" selected="Python tests.pytest in sendRedPacket.py">
     <configuration name="redPacketCase" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="WeChatRedPacket" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -377,36 +372,36 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in TestCaseUtil.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in sendRedPacket.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="WeChatRedPacket" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mutil" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/mutil/TestCaseUtil.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/case/sendRedPacket.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.redPacketCase" />
       <item itemvalue="Python.runcase" />
-      <item itemvalue="Python tests.pytest in TestCaseUtil.py" />
       <item itemvalue="Python tests.pytest for TestCaseUtil.TestCaseUtil" />
       <item itemvalue="Python tests.pytest for TestCaseUtil.TestCaseUtil.test_case" />
+      <item itemvalue="Python tests.pytest in sendRedPacket.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in sendRedPacket.py" />
         <item itemvalue="Python tests.pytest for TestCaseUtil.TestCaseUtil.test_case" />
         <item itemvalue="Python tests.pytest for TestCaseUtil.TestCaseUtil" />
         <item itemvalue="Python.redPacketCase" />
         <item itemvalue="Python.runcase" />
-        <item itemvalue="Python tests.pytest in TestCaseUtil.py" />
       </list>
     </recent_temporary>
   </component>
@@ -428,13 +423,24 @@
       <option name="project" value="LOCAL" />
       <updated>1546143531263</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add test">
+      <created>1547127741792</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547127741792</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修改测试">
+      <created>1547304085055</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547304085055</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_TestCaseUtil_TestCaseUtil - 2018.12.28 at 12h 46m 35s.xml">
-      <configuration name="pytest for TestCaseUtil.TestCaseUtil" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_for_TestCaseUtil_TestCaseUtil - 2018.12.29 at 09h 56m 38s.xml">
       <configuration name="pytest for TestCaseUtil.TestCaseUtil" configurationId="tests" />
     </history-entry>
@@ -459,25 +465,32 @@
     <history-entry file="pytest_for_TestCaseUtil_TestCaseUtil_test_case - 2019.01.10 at 21h 32m 48s.xml">
       <configuration name="pytest for TestCaseUtil.TestCaseUtil.test_case" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_in_sendRedPacket_py - 2019.01.12 at 22h 15m 41s.xml">
+      <configuration name="pytest in sendRedPacket.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_sendRedPacket_py - 2019.01.12 at 22h 17m 33s.xml">
+      <configuration name="pytest in sendRedPacket.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18093699" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18336026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4160584" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4160584" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998884" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.35182482" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22335766" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.22335766" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32998884" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -489,12 +502,39 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test" />
+    <MESSAGE value="修改测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -507,9 +547,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://E:/anaconda/Lib/unittest/case.py" />
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python35/site-packages/selenium/webdriver/remote/errorhandler.py" />
     <entry file="file://$USER_HOME$/AppData/Roaming/Python/Python35/site-packages/selenium/webdriver/common/desired_capabilities.py" />
@@ -533,13 +570,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///anaconda3/lib/python3.6/site-packages/appium/webdriver/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mutil/helpers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
@@ -557,9 +587,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///anaconda3/lib/python3.6/unittest/runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///anaconda3/lib/python3.6/unittest/loader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-509">
+        <state relative-caret-position="1890">
           <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
         </state>
       </provider>
@@ -578,60 +615,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///anaconda3/lib/python3.6/unittest/runner.py">
+    <entry file="file:///anaconda3/lib/python3.6/unittest/result.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="132">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file:///anaconda3/lib/python3.6/unittest/result.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/config.ini">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/提现.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mutil/config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="15">
+          <caret line="1" column="4" selection-start-line="1" selection-end-line="1" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runcase.py">
+    <entry file="file:///anaconda3/lib/python3.6/site-packages/appium/webdriver/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1061">
-          <caret line="110" column="43" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="132">
+          <caret line="868" column="8" selection-start-line="868" selection-start-column="8" selection-end-line="868" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mutil/TestCaseUtil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="51" column="58" lean-forward="true" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
+        <state relative-caret-position="132">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
           <folding>
             <element signature="e#160#169#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/runcase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1882">
+          <caret line="128" column="55" selection-start-line="127" selection-start-column="20" selection-end-line="128" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/case/redPacketCase.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
+        <state relative-caret-position="-977">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/sendRedPacket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
           <folding>
-            <element signature="e#159#174#0" expanded="true" />
+            <element signature="e#160#175#0" expanded="true" />
           </folding>
         </state>
       </provider>
