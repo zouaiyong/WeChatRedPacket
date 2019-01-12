@@ -90,11 +90,12 @@ class sendRedPacket(mutil.TestCaseUtil.TestCaseUtil):
                             self.driver.back()
                             params['id'] = user.get('id')
                             requests.get(apiurl, params=params)
+                        else:
+                            raise Exception("error throw", '不是好友')
                     except Exception as e:
                         print(str(e))
 
-                    else:
-                        raise Exception("error throw", '不是好友')
+
                     self.tearDown()
 
 
