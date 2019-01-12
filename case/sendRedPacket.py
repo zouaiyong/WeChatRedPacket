@@ -40,7 +40,7 @@ class sendRedPacket(mutil.TestCaseUtil.TestCaseUtil):
                 if  user.get('type')==1:
                     try:
                         self.driver.launch_app()
-                        sleep(3)
+                        sleep(5)
                         id=self.driver.find_element_by_android_uiautomator('new UiSelector().description("Search")')
                         #id=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/ij")')
                         id.click()
