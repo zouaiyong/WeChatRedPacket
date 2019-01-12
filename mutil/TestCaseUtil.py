@@ -63,6 +63,7 @@ class TestCaseUtil(unittest.TestCase):
         #self.driver.close_app()
         #self.driver.quit()
         self.driver.back()
+        self.driver.keyevent(3)
         print("tear down is run")
 
     def test_case(self):
