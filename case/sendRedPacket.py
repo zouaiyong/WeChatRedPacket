@@ -52,6 +52,7 @@ class sendRedPacket(mutil.TestCaseUtil.TestCaseUtil):
                         print(inputtext)
                         adbcommond='adb shell am broadcast -a ADB_INPUT_TEXT --es msg {inputtext}'.format(inputtext=inputtext)
                         os.system(adbcommond)
+                        sleep(3)
                         alias = self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/jv")')
                         #alias=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/pp")')
                         aliastext=alias.text.split(':')[1].strip()
@@ -64,7 +65,7 @@ class sendRedPacket(mutil.TestCaseUtil.TestCaseUtil):
                             chat.click()
                             #sleep(1)
                             self.driver.find_element_by_android_uiautomator('new UiSelector().text("Red Packet")').click()
-                            #sleep(2)
+                            sleep(1)
                             #rednum=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/csk")')
                             rednum=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/clu")')
 
