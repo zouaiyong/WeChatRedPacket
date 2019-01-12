@@ -11,6 +11,7 @@ import re
 import unittest
 from time import sleep
 
+import requests
 import xlrd
 
 import mutil.TestCaseUtil
@@ -18,15 +19,19 @@ from mutil.configure import configpy
 
 
 class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
+
+
     def caseExecute(self):
+
         conf = configpy()
         password=conf.getConfig('user', 'password')
         user=conf.getConfig('user','user')
+
         userdic=json.loads(user)
         passlist=list(password)
         print(passlist)
         keycodvalue={'0':7,'1':8,'2':9,'3':10,'4':11,'5':12,'6':13,'7':14,'8':15,'9':16}
-        if "申请提现" in userdic.get('状态'):
+        if  userdic.get('type')==1:
             #sleep(3)
             id=self.driver.find_element_by_android_uiautomator('new UiSelector().description("Search")')
             #id=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/ij")')
@@ -35,7 +40,7 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
             textid = self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/ji")')
             textid.click()
             textid.clear()
-            inputtext=userdic.get('电话号码')
+            inputtext=userdic.get('tel')
             print(inputtext)
             adbcommond='adb shell am broadcast -a ADB_INPUT_TEXT --es msg {inputtext}'.format(inputtext=inputtext)
             os.system(adbcommond)
@@ -49,14 +54,14 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
                 chat=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/aij")')
 
                 chat.click()
-                sleep(1)
+                #sleep(1)
                 self.driver.find_element_by_android_uiautomator('new UiSelector().text("Red Packet")').click()
                 #sleep(2)
                 #rednum=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/csk")')
                 rednum=self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/clu")')
 
                 rednum.clear()
-                money=userdic.get('金额')
+                money=str(int(userdic.get('money'))/100)
                 self.driver.set_value(rednum,money)
                 self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/cnh")').click()
                 #self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/cuj")').click()
@@ -72,9 +77,12 @@ class redPacketCase(mutil.TestCaseUtil.TestCaseUtil):
                 self.driver.press_keycode(keycodvalue.get(passlist[3]))
                 self.driver.press_keycode(keycodvalue.get(passlist[4]))
                 self.driver.press_keycode(keycodvalue.get(passlist[5]))
-                sleep(1)
+                #sleep(1)
                 self.driver.find_element_by_android_uiautomator('new UiSelector().resourceId("com.tencent.mm:id/alw")')
                 self.driver.back()
+
+            else:
+                raise Exception("error throw", '不是好友')
 
 
     def readexcel(self,path):

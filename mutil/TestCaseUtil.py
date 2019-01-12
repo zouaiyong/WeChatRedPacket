@@ -48,13 +48,15 @@ class TestCaseUtil(unittest.TestCase):
         #self.driver=webdriver.Remote('http://127.0.0.1:4723/wd/hub',desired_caps)
         #os.popen('adb wait-for-device ')
         self.driver = webdriver.Remote(command_executor=EXECUTOR, desired_capabilities=desired_caps)
-        self.driver.install_app(desired_caps['app'])
+        install=self.driver.is_app_installed('com.android.adbkeyboard')
+        if not install:
+            self.driver.install_app(desired_caps['app'])
         os.system('adb shell ime set com.android.adbkeyboard/.AdbIME')
         # self.driver = WebDriver(
         #     'http://localhost', port=4723,desired_capabilities=desired_caps)
         #self.driver.launch_app()
         #sleep(3)
-        #self.driver.implicitly_wait(5)
+        self.driver.implicitly_wait(3)
 
 
     def tearDown(self):

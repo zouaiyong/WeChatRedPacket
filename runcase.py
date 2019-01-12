@@ -1,9 +1,11 @@
 import argparse
 import csv
 import json
+import os
 import re
 import unittest
 
+import requests
 import xlrd
 
 from case import redPacketCase
@@ -88,33 +90,57 @@ def writeCsvfile(filepath, rows):
 
 
 if __name__ == '__main__':
+    dataapi='http://nodejs999.com/api/video/v1/runquery2'
+    apiurl = 'http://nodejs999.com/api/video/v1/sendmoney2'
+    params = {'id': '123', 'type': 2, 'xtype': 4}
+    dataparams={'time':'','xtype':4,'time2':'','stype':3,'adtype':3}
     parser = argparse.ArgumentParser()
-    parser.add_argument("--filepath", type=str)
+    #parser.add_argument("--filepath", type=str)
     parser.add_argument("--password", type=int)
+    parser.add_argument('--startTime',type=str)
+    parser.add_argument('--endTime',type=str)
     args = parser.parse_args()
-    filepath = args.filepath
+    #filepath = args.filepath
+    #nosendpath=os.path.split(filepath)[0]+os.sep+"notsendpacket.csv"
+
     password = args.password
-    alluser = readCsvfile(filepath)
+    #alluser = readCsvfile(filepath)
     conf = configpy()
     conf.setConfig('user', 'password', str(password))
-    afterrows=[]
-    if args.filepath and args.password:
-        if alluser:
+    #afterrows=[]
+    #notsend=[]
+    if args.startTime and args.password and args.endTime:
+        dataparams['time']=args.startTime
+        dataparams['time2']=args.endTime
+        respones=requests.get(dataapi,params=dataparams)
+        alldata=respones.json()
+        if alldata:
+            alluser=alldata.get('data').get('r1')
             for user in alluser:
                 conf.setConfig(
-                    'user', 'user', json.dumps(
-                        user, ensure_ascii=False))
+                    'user', 'user', json.dumps(user,ensure_ascii=False))
+                #conf.setConfig('user','type',user.get('type'))
+                #conf.setConfig('user','money',str(int(user.get('money'))/100))
                 result=execute()
-                if len(result.errors)==0 and len(result.failures)==0:
-                    user['状态']='已结算'
-                    afterrows.append(user)
-            writeCsvfile(filepath,afterrows)
+                if len(result.errors)==0 and len(result.failures)==0 and len(result.skipped)==0:
+                    #user['状态']='已结算'
+                    #afterrows.append(user)
+                    params['id'] = user.get('id')
+                    requests.get(apiurl, params=params)
+                #else:
+                    #notsend.append(user)
+
+
+            #writeCsvfile(filepath,afterrows)
+            #writeCsvfile(nosendpath,notsend)
 
 
     else:
         print('''请输入正确的参数
         --filepath： type string  excel路径
         --password： type int 微信支付密码
-        usage : python runcase.py --filepath D:/xxx.xlsx --password  123456''')
+        --startTime:  type string 开始时间
+        --endTime：  type string 结束时间
+        usage : python runcase.py  --password  123456 --startTime 2019-1-11 --endTime 2019-01-12''')
     # #readCsvfile('提现.csv')
     #writeCsvfile('提现.csv',[{"状态":"23"}])
